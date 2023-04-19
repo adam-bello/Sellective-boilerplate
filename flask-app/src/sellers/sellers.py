@@ -18,7 +18,7 @@ def post_listing():
     sellerid = req_data['sellerId']
     productid = req_data['productId']
     query = 'INSERT INTO Listings (title, description, quantity, price, sellerId, productId) VALUES ("'
-    query += title + '", "' + desc + '", ' + quantity + ', ' + price + ', ' + sellerid + ', ' + productid + ')'
+    query += title + '", "' + desc + '", ' + str(quantity) + ', ' + str(price) + ', ' + str(sellerid) + ', ' + str(productid) + ')'
 
     cursor.execute(query)
     db.get_db().commit()
@@ -30,10 +30,10 @@ def update_listing(listingID):
     req_data = request.get_json()
     cursor = db.get_db().cursor()
 
-    title = req_data['title']
-    desc = req_data['description']
-    quantity = req_data['quantity']
-    price = req_data['price']
+    title = req_data['newTitle']
+    desc = req_data['newDescription']
+    quantity = req_data['newQuantity']
+    price = req_data['newPrice']
 
     query = 'UPDATE Listings SET quantity={0}, price={1}, title="{2}", description="{3}" WHERE listingID = {4};'.format(quantity, price, title, desc, listingID)
     cursor.execute(query)
