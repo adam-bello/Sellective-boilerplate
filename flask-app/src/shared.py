@@ -122,7 +122,7 @@ def get_listing_notes(listingID):
 def get_seller_reviews(sellerID):
     cursor = db.get_db().cursor()
     query = '''
-        SELECT likes, dislikes, reviewComment, timePosted
+        SELECT reviewId, likes, dislikes, reviewComment, timePosted
         FROM SellerReviews
         WHERE SellerId = {0}
     '''.format(sellerID)
