@@ -96,7 +96,7 @@ def get_review_responses(reviewID):
 
     return jsonify(json_data)
 
-# get the authenticator notes for a review
+# get the authenticator notes for a listing
 @shared.route('/listings/<listingID>/notes')
 def get_listing_notes(listingID):
     cursor = db.get_db().cursor()
