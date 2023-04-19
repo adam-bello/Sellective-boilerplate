@@ -79,14 +79,13 @@ CREATE TABLE IF NOT EXISTS Orders (
     sellerId int,
     authenticatorID int,
     listingID int,
-    isAuthenticated boolean
+    isAuthenticated boolean,
+    FOREIGN KEY (buyerId) references Buyers (buyerId),
+    FOREIGN KEY (sellerId) references Sellers (sellerId),
+    FOREIGN KEY (authenticatorId) references Authenticators (authenticatorId),
+    FOREIGN KEY (listingId) references Listings (listingId)
+        ON DELETE CASCADE
 );
-
-ALTER TABLE Orders
-ADD FOREIGN KEY (buyerId) references Buyers (buyerId),
-ADD FOREIGN KEY (sellerId) references Sellers (sellerId),
-ADD FOREIGN KEY (authenticatorId) references Authenticators (authenticatorId),
-ADD FOREIGN KEY (listingId) references Listings (listingId);
 
 
 CREATE TABLE IF NOT EXISTS ListingReviews(
@@ -118,8 +117,10 @@ CREATE TABLE IF NOT EXISTS AuthenticatorListingNotes(
     timePosted DATETIME DEFAULT CURRENT_TIMESTAMP,
     listingId int,
     authenticatorId int,
-    FOREIGN KEY (listingId) references Listings (listingId),
+    FOREIGN KEY (listingId) references Listings (listingId)
+        ON DELETE CASCADE,
     FOREIGN KEY (authenticatorId) references Authenticators (authenticatorId)
+        ON DELETE CASCADE
 );
 
 CREATE TABLE IF NOT EXISTS SellerReviews (
