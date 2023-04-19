@@ -6,6 +6,8 @@ from src import db
 authenticators = Blueprint('authenticators', __name__)
 
 # get the orders for an authenticator
+
+
 @authenticators.route('/<id>/orders')
 def get_orders(id):
     cursor = db.get_db().cursor()
@@ -27,6 +29,8 @@ def get_orders(id):
     return jsonify(json_data)
 
 # get the all of the specifics of an order
+
+
 @authenticators.route('/order/<orderID>/details')
 def get_order_details(orderID):
     cursor = db.get_db().cursor()
@@ -55,15 +59,20 @@ def get_order_details(orderID):
     return jsonify(json_data)
 
 # authenticate an order
+
+
 @authenticators.route('/order/<orderID>', methods=['PUT'])
 def authenticate_order(orderID):
     cursor = db.get_db().cursor()
-    query = 'UPDATE Orders SET isAuthenticated = 1 WHERE orderId = {0};'.format(orderID)
+    query = 'UPDATE Orders SET isAuthenticated = 1 WHERE orderId = {0};'.format(
+        orderID)
     cursor.execute(query)
     db.get_db().commit()
     return "Success"
 
 # post an authenticator note
+
+
 @authenticators.route('/listings/<listingID>/<authenticatorID>', methods=['POST'])
 def post_note(listingID, authenticatorID):
     req_data = request.get_json()
@@ -79,6 +88,8 @@ def post_note(listingID, authenticatorID):
     return "Success"
 
 # update an authenticator note
+
+
 @authenticators.route('/notes/<noteID>', methods=['PUT'])
 def update_note(noteID):
     req_data = request.get_json()
@@ -86,19 +97,51 @@ def update_note(noteID):
     cursor = db.get_db().cursor()
     content = req_data['noteComment']
 
-    query = 'UPDATE AuthenticatorListingNotes SET noteComment="{0}" WHERE noteID = {1};'.format(content, noteID)
+    query = 'UPDATE AuthenticatorListingNotes SET noteComment="{0}" WHERE noteID = {1};'.format(
+        content, noteID)
 
     cursor.execute(query)
     db.get_db().commit()
     return "Success"
 
 # delete an authenticator note
+
+
 @authenticators.route('/notes/<noteID>', methods=['DELETE'])
 def delete_note(noteID):
     cursor = db.get_db().cursor()
 
-    query = 'DELETE FROM AuthenticatorListingNotes where noteID={0};'.format(noteID)
+    query = 'DELETE FROM AuthenticatorListingNotes where noteID={0};'.format(
+        noteID)
 
     cursor.execute(query)
     db.get_db().commit()
     return "Success"
+
+# get all notes
+
+
+@authenticators.route('/notes', methods=['GET'])
+def get_AuthenticatorListingNotes():
+    cursor = db.get_db().cursor()
+    query = '''
+        SELECT *
+FROM AuthenticatorListingNotes
+    '''
+    cursor.execute(query)
+    # grab the column headers from the returned data
+    column_headers = [x[0] for x in cursor.description]
+
+    # create an empty dictionary object to use in
+    # putting column headers together with data
+    json_data = []
+
+    # fetch all the data from the cursor
+    theData = cursor.fetchall()
+
+    # for each of the rows, zip the data elements together with
+    # the column headers.
+    for row in theData:
+        json_data.append(dict(zip(column_headers, row)))
+
+    return jsonify(json_data)
