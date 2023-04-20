@@ -6,8 +6,6 @@ from src import db
 authenticators = Blueprint('authenticators', __name__)
 
 # get the orders for an authenticator
-
-
 @authenticators.route('/<id>/orders')
 def get_orders(id):
     cursor = db.get_db().cursor()
@@ -29,8 +27,6 @@ def get_orders(id):
     return jsonify(json_data)
 
 # get the all of the specifics of an order
-
-
 @authenticators.route('/order/<orderID>/details')
 def get_order_details(orderID):
     cursor = db.get_db().cursor()
@@ -59,8 +55,6 @@ def get_order_details(orderID):
     return jsonify(json_data)
 
 # authenticate an order
-
-
 @authenticators.route('/order/<orderID>', methods=['PUT'])
 def authenticate_order(orderID):
     cursor = db.get_db().cursor()
@@ -71,8 +65,6 @@ def authenticate_order(orderID):
     return "Success"
 
 # post an authenticator note
-
-
 @authenticators.route('/listings/<listingID>/<authenticatorID>', methods=['POST'])
 def post_note(listingID, authenticatorID):
     req_data = request.get_json()
@@ -88,8 +80,6 @@ def post_note(listingID, authenticatorID):
     return "Success"
 
 # update an authenticator note
-
-
 @authenticators.route('/notes/<noteID>', methods=['PUT'])
 def update_note(noteID):
     req_data = request.get_json()
@@ -105,8 +95,6 @@ def update_note(noteID):
     return "Success"
 
 # delete an authenticator note
-
-
 @authenticators.route('/notes/<noteID>', methods=['DELETE'])
 def delete_note(noteID):
     cursor = db.get_db().cursor()
@@ -119,14 +107,12 @@ def delete_note(noteID):
     return "Success"
 
 # get all notes
-
-
 @authenticators.route('/notes', methods=['GET'])
 def get_AuthenticatorListingNotes():
     cursor = db.get_db().cursor()
     query = '''
         SELECT *
-FROM AuthenticatorListingNotes
+        FROM AuthenticatorListingNotes
     '''
     cursor.execute(query)
     # grab the column headers from the returned data

@@ -8,8 +8,6 @@ from src import db
 shared = Blueprint('shared', __name__)
 
 # get all listings
-
-
 @shared.route('/listings')
 def get_listings():
     cursor = db.get_db().cursor()
@@ -36,8 +34,6 @@ def get_listings():
     return jsonify(json_data)
 
 # get the details of a listing
-
-
 @shared.route('/listings/<listingID>')
 def get_listing_details(listingID):
     cursor = db.get_db().cursor()
@@ -59,8 +55,6 @@ def get_listing_details(listingID):
     return jsonify(json_data)
 
 # get the reviews for a listing
-
-
 @shared.route('/listings/<listingID>/reviews')
 def get_reviews(listingID):
     cursor = db.get_db().cursor()
@@ -82,8 +76,6 @@ def get_reviews(listingID):
     return jsonify(json_data)
 
 # get the responses for a listing review
-
-
 @shared.route('/listingreviews/<reviewID>/responses')
 def get_review_responses(reviewID):
     cursor = db.get_db().cursor()
@@ -104,13 +96,7 @@ def get_review_responses(reviewID):
 
     return jsonify(json_data)
 
-<<<<<<< HEAD
 # get the authenticator notes for a listing
-=======
-# get the authenticator notes for a review
-
-
->>>>>>> 72e098258b403f956f42b4d1ce7fae2760de8d1c
 @shared.route('/listings/<listingID>/notes')
 def get_listing_notes(listingID):
     cursor = db.get_db().cursor()
@@ -132,8 +118,6 @@ def get_listing_notes(listingID):
     return jsonify(json_data)
 
 # get the reviews for a seller
-
-
 @shared.route('/sellers/<sellerID>/reviews')
 def get_seller_reviews(sellerID):
     cursor = db.get_db().cursor()
@@ -155,8 +139,6 @@ def get_seller_reviews(sellerID):
     return jsonify(json_data)
 
 # get the responses for a seller review
-
-
 @shared.route('/sellerreviews/<reviewID>/responses')
 def get_sellerreview_responses(reviewID):
     cursor = db.get_db().cursor()
@@ -178,8 +160,6 @@ def get_sellerreview_responses(reviewID):
     return jsonify(json_data)
 
 # get all products
-
-
 @shared.route('/products')
 def get_products():
     cursor = db.get_db().cursor()
@@ -207,8 +187,6 @@ def get_products():
     return jsonify(json_data)
 
 # get all sellers
-
-
 @shared.route('/sellers')
 def get_sellers():
     cursor = db.get_db().cursor()

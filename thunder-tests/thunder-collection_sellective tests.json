@@ -1,0 +1,1476 @@
+{
+    "client": "Thunder Client",
+    "collectionName": "sellective tests",
+    "dateExported": "2023-04-20T01:03:11.123Z",
+    "version": "1.1",
+    "folders": [],
+    "requests": [
+        {
+            "_id": "5a44f2f9-ec2e-46f6-a520-a80366b9c93b",
+            "colId": "8b35dde7-c134-4f5e-b263-4a12e42dffb7",
+            "containerId": "",
+            "name": "get listings",
+            "url": "localhost:8001/listings",
+            "method": "GET",
+            "sortNum": 5000,
+            "created": "2023-04-19T19:20:28.833Z",
+            "modified": "2023-04-20T00:24:04.063Z",
+            "headers": [],
+            "params": [],
+            "tests": [
+                {
+                    "type": "res-body",
+                    "custom": "",
+                    "action": "isjson",
+                    "value": ""
+                },
+                {
+                    "type": "res-body",
+                    "custom": "",
+                    "action": "contains",
+                    "value": "\"price\""
+                },
+                {
+                    "type": "res-body",
+                    "custom": "",
+                    "action": "contains",
+                    "value": "\"quantity\""
+                },
+                {
+                    "type": "res-body",
+                    "custom": "",
+                    "action": "contains",
+                    "value": "\"timeListed\""
+                },
+                {
+                    "type": "res-body",
+                    "custom": "",
+                    "action": "contains",
+                    "value": "\"title\""
+                },
+                {
+                    "type": "res-body",
+                    "custom": "",
+                    "action": "contains",
+                    "value": "\"description\""
+                }
+            ]
+        },
+        {
+            "_id": "82777110-3ad9-43bb-a441-77cbd4f36902",
+            "colId": "8b35dde7-c134-4f5e-b263-4a12e42dffb7",
+            "containerId": "",
+            "name": "get specific listing 1",
+            "url": "localhost:8001/listings/203",
+            "method": "GET",
+            "sortNum": 7500,
+            "created": "2023-04-19T19:22:05.812Z",
+            "modified": "2023-04-20T00:24:51.162Z",
+            "headers": [],
+            "params": [],
+            "tests": [
+                {
+                    "type": "res-body",
+                    "custom": "",
+                    "action": "isjson",
+                    "value": ""
+                },
+                {
+                    "type": "res-body",
+                    "custom": "",
+                    "action": "contains",
+                    "value": "\"description\": \"tristique"
+                },
+                {
+                    "type": "res-body",
+                    "custom": "",
+                    "action": "contains",
+                    "value": "\"name\": \"1977 Star Wars Luke"
+                }
+            ]
+        },
+        {
+            "_id": "81a7a648-3a86-46d3-a0f0-544a131f2b5d",
+            "colId": "8b35dde7-c134-4f5e-b263-4a12e42dffb7",
+            "containerId": "",
+            "name": "get specific listing 2",
+            "url": "localhost:8001/listings/345",
+            "method": "GET",
+            "sortNum": 8750,
+            "created": "2023-04-19T19:22:51.576Z",
+            "modified": "2023-04-20T00:25:29.004Z",
+            "headers": [],
+            "params": [],
+            "tests": [
+                {
+                    "type": "res-body",
+                    "custom": "",
+                    "action": "isjson",
+                    "value": ""
+                },
+                {
+                    "type": "res-body",
+                    "custom": "",
+                    "action": "contains",
+                    "value": "\"description\": \"mauris"
+                },
+                {
+                    "type": "res-body",
+                    "custom": "",
+                    "action": "contains",
+                    "value": "\"name\": \"1977 Star Wars Style"
+                }
+            ]
+        },
+        {
+            "_id": "29617c44-8f9d-49c2-84dc-5023601a3f62",
+            "colId": "8b35dde7-c134-4f5e-b263-4a12e42dffb7",
+            "containerId": "",
+            "name": "get nonexistant listing",
+            "url": "localhost:8001/listings/20000",
+            "method": "GET",
+            "sortNum": 9375,
+            "created": "2023-04-19T19:23:38.127Z",
+            "modified": "2023-04-19T22:19:59.470Z",
+            "headers": [],
+            "params": [],
+            "tests": [
+                {
+                    "type": "res-body",
+                    "custom": "",
+                    "action": "isjson",
+                    "value": ""
+                },
+                {
+                    "type": "res-body",
+                    "custom": "",
+                    "action": "equal",
+                    "value": "[]"
+                }
+            ]
+        },
+        {
+            "_id": "31121347-27fb-4759-83f3-d091fbee6cc0",
+            "colId": "8b35dde7-c134-4f5e-b263-4a12e42dffb7",
+            "containerId": "",
+            "name": "get listing reviews",
+            "url": "localhost:8001/listings/53/reviews",
+            "method": "GET",
+            "sortNum": 9687.5,
+            "created": "2023-04-19T19:25:01.245Z",
+            "modified": "2023-04-20T00:30:21.581Z",
+            "headers": [],
+            "params": [],
+            "tests": [
+                {
+                    "type": "res-body",
+                    "custom": "",
+                    "action": "isjson",
+                    "value": ""
+                },
+                {
+                    "type": "res-body",
+                    "custom": "",
+                    "action": "contains",
+                    "value": " \"dislikes\": 8,"
+                },
+                {
+                    "type": "res-body",
+                    "custom": "",
+                    "action": "contains",
+                    "value": "\"likes\": 10,"
+                },
+                {
+                    "type": "res-body",
+                    "custom": "",
+                    "action": "contains",
+                    "value": " \"reviewComment\": \"nibh in lectus"
+                },
+                {
+                    "type": "res-body",
+                    "custom": "",
+                    "action": "contains",
+                    "value": "\"timePosted\": \"Thu, 15 Sep 2022 13:04:07 GMT\""
+                },
+                {
+                    "type": "res-body",
+                    "custom": "",
+                    "action": "contains",
+                    "value": "\"reviewId\": 135,"
+                }
+            ]
+        },
+        {
+            "_id": "e9537e62-712d-4814-9b04-41c1a3e91142",
+            "colId": "8b35dde7-c134-4f5e-b263-4a12e42dffb7",
+            "containerId": "",
+            "name": "get listing no reviews",
+            "url": "localhost:8001/listings/23/reviews",
+            "method": "GET",
+            "sortNum": 9843.8,
+            "created": "2023-04-19T19:25:45.625Z",
+            "modified": "2023-04-20T00:28:17.013Z",
+            "headers": [],
+            "params": [],
+            "tests": [
+                {
+                    "type": "res-body",
+                    "custom": "",
+                    "action": "isjson",
+                    "value": ""
+                },
+                {
+                    "type": "res-body",
+                    "custom": "",
+                    "action": "equal",
+                    "value": "[]"
+                }
+            ]
+        },
+        {
+            "_id": "5efdba2f-d498-4503-ba0e-456d37eb068b",
+            "colId": "8b35dde7-c134-4f5e-b263-4a12e42dffb7",
+            "containerId": "",
+            "name": "get review responses",
+            "url": "localhost:8001/listingreviews/127/responses",
+            "method": "GET",
+            "sortNum": 9921.9,
+            "created": "2023-04-19T19:26:24.901Z",
+            "modified": "2023-04-20T00:31:26.304Z",
+            "headers": [],
+            "params": [],
+            "tests": [
+                {
+                    "type": "res-body",
+                    "custom": "",
+                    "action": "isjson",
+                    "value": ""
+                },
+                {
+                    "type": "res-body",
+                    "custom": "",
+                    "action": "contains",
+                    "value": "\"responseComment\": \"sit amet cursus"
+                },
+                {
+                    "type": "res-body",
+                    "custom": "",
+                    "action": "contains",
+                    "value": "\"timePosted\": \"Thu, 23 Jun 2022 13:30:56 GMT\""
+                },
+                {
+                    "type": "res-body",
+                    "custom": "",
+                    "action": "contains",
+                    "value": " \"responseComment\": \"rutrum nulla nunc"
+                },
+                {
+                    "type": "res-body",
+                    "custom": "",
+                    "action": "contains",
+                    "value": "\"timePosted\": \"Sat, 18 Mar 2023 22:39:35 GMT\""
+                }
+            ]
+        },
+        {
+            "_id": "f4b0cc45-9885-446e-ba0b-235c025ffeff",
+            "colId": "8b35dde7-c134-4f5e-b263-4a12e42dffb7",
+            "containerId": "",
+            "name": "get review responses none",
+            "url": "localhost:8001/listingreviews/89/responses",
+            "method": "GET",
+            "sortNum": 9961,
+            "created": "2023-04-19T19:29:29.180Z",
+            "modified": "2023-04-20T00:32:06.690Z",
+            "headers": [],
+            "params": [],
+            "tests": [
+                {
+                    "type": "res-body",
+                    "custom": "",
+                    "action": "isjson",
+                    "value": ""
+                },
+                {
+                    "type": "res-body",
+                    "custom": "",
+                    "action": "equal",
+                    "value": "[]"
+                }
+            ]
+        },
+        {
+            "_id": "25452f5e-503e-4c1b-8fba-edec166de32c",
+            "colId": "8b35dde7-c134-4f5e-b263-4a12e42dffb7",
+            "containerId": "",
+            "name": "get review responses nonexistant review",
+            "url": "localhost:8001/listingreviews/20001/responses",
+            "method": "GET",
+            "sortNum": 9980.5,
+            "created": "2023-04-19T19:30:04.373Z",
+            "modified": "2023-04-20T00:32:22.194Z",
+            "headers": [],
+            "params": [],
+            "tests": [
+                {
+                    "type": "res-body",
+                    "custom": "",
+                    "action": "isjson",
+                    "value": ""
+                },
+                {
+                    "type": "res-body",
+                    "custom": "",
+                    "action": "equal",
+                    "value": "[]"
+                }
+            ]
+        },
+        {
+            "_id": "b11aa5c1-e30c-4cca-ab89-b0c49b6312b8",
+            "colId": "8b35dde7-c134-4f5e-b263-4a12e42dffb7",
+            "containerId": "",
+            "name": "get authenticator notes",
+            "url": "localhost:8001/listings/1/notes",
+            "method": "GET",
+            "sortNum": 9990.3,
+            "created": "2023-04-19T19:45:23.006Z",
+            "modified": "2023-04-20T00:35:42.480Z",
+            "headers": [],
+            "params": [],
+            "tests": [
+                {
+                    "type": "res-body",
+                    "custom": "",
+                    "action": "isjson",
+                    "value": ""
+                },
+                {
+                    "type": "res-body",
+                    "custom": "",
+                    "action": "contains",
+                    "value": "\"noteComment\": \"rutrum at lorem"
+                },
+                {
+                    "type": "res-body",
+                    "custom": "",
+                    "action": "contains",
+                    "value": "\"timePosted\": \"Wed, 29 Mar 2023 14:00:18 GMT\""
+                }
+            ]
+        },
+        {
+            "_id": "d051bb01-5c84-427a-beaa-75ce4983f017",
+            "colId": "8b35dde7-c134-4f5e-b263-4a12e42dffb7",
+            "containerId": "",
+            "name": "get authenticaor notes none",
+            "url": "localhost:8001/listings/79/notes",
+            "method": "GET",
+            "sortNum": 9995.1,
+            "created": "2023-04-19T19:46:51.929Z",
+            "modified": "2023-04-20T00:36:01.511Z",
+            "headers": [],
+            "params": [],
+            "tests": [
+                {
+                    "type": "res-body",
+                    "custom": "",
+                    "action": "isjson",
+                    "value": ""
+                },
+                {
+                    "type": "res-body",
+                    "custom": "",
+                    "action": "equal",
+                    "value": "[]"
+                }
+            ]
+        },
+        {
+            "_id": "acad9098-8fbd-433d-84f8-652ba5f27ced",
+            "colId": "8b35dde7-c134-4f5e-b263-4a12e42dffb7",
+            "containerId": "",
+            "name": "get authenticator notes nonexistant listing",
+            "url": "localhost:8001/listings/70009/notes",
+            "method": "GET",
+            "sortNum": 9997.5,
+            "created": "2023-04-19T19:47:35.665Z",
+            "modified": "2023-04-20T00:36:17.786Z",
+            "headers": [],
+            "params": [],
+            "tests": [
+                {
+                    "type": "res-body",
+                    "custom": "",
+                    "action": "isjson",
+                    "value": ""
+                },
+                {
+                    "type": "res-body",
+                    "custom": "",
+                    "action": "equal",
+                    "value": "[]"
+                }
+            ]
+        },
+        {
+            "_id": "9a82890e-a157-40e3-9941-4f3f3b6e5911",
+            "colId": "8b35dde7-c134-4f5e-b263-4a12e42dffb7",
+            "containerId": "",
+            "name": "get seller reviews",
+            "url": "localhost:8001/sellers/3/reviews",
+            "method": "GET",
+            "sortNum": 9998.8,
+            "created": "2023-04-19T21:36:40.473Z",
+            "modified": "2023-04-20T00:37:48.696Z",
+            "headers": [],
+            "params": [],
+            "tests": [
+                {
+                    "type": "res-body",
+                    "custom": "",
+                    "action": "isjson",
+                    "value": ""
+                },
+                {
+                    "type": "res-body",
+                    "custom": "",
+                    "action": "contains",
+                    "value": "\"dislikes\": 3,"
+                },
+                {
+                    "type": "res-body",
+                    "custom": "",
+                    "action": "contains",
+                    "value": "\"likes\": 1,"
+                },
+                {
+                    "type": "res-body",
+                    "custom": "",
+                    "action": "contains",
+                    "value": "\"reviewComment\": \"pede malesuada"
+                },
+                {
+                    "type": "res-body",
+                    "custom": "",
+                    "action": "contains",
+                    "value": "\"reviewId\": 49,"
+                },
+                {
+                    "type": "res-body",
+                    "custom": "",
+                    "action": "contains",
+                    "value": " \"timePosted\": \"Mon, 13 Feb 2023 03:59:18 GMT\""
+                },
+                {
+                    "type": "res-body",
+                    "custom": "",
+                    "action": "contains",
+                    "value": "\"reviewId\": 235,"
+                },
+                {
+                    "type": "res-body",
+                    "custom": "",
+                    "action": "contains",
+                    "value": "\"reviewId\": 275,"
+                },
+                {
+                    "type": "res-body",
+                    "custom": "",
+                    "action": "contains",
+                    "value": "\"reviewId\": 307,"
+                }
+            ]
+        },
+        {
+            "_id": "25f9f2e0-19f8-4af1-bc17-bde4767420a6",
+            "colId": "8b35dde7-c134-4f5e-b263-4a12e42dffb7",
+            "containerId": "",
+            "name": "get seller reviews nonexistant seller",
+            "url": "localhost:8001/sellers/489896/reviews",
+            "method": "GET",
+            "sortNum": 9999.7,
+            "created": "2023-04-19T21:38:56.067Z",
+            "modified": "2023-04-20T00:41:59.651Z",
+            "headers": [],
+            "params": [],
+            "tests": [
+                {
+                    "type": "res-body",
+                    "custom": "",
+                    "action": "isjson",
+                    "value": ""
+                },
+                {
+                    "type": "res-body",
+                    "custom": "",
+                    "action": "equal",
+                    "value": "[]"
+                }
+            ]
+        },
+        {
+            "_id": "b5c65ac5-bfdf-40db-8bf4-e2308acd7cc0",
+            "colId": "8b35dde7-c134-4f5e-b263-4a12e42dffb7",
+            "containerId": "",
+            "name": "get seller review responses",
+            "url": "localhost:8001/sellerreviews/1/responses",
+            "method": "GET",
+            "sortNum": 9999.9,
+            "created": "2023-04-19T21:39:40.134Z",
+            "modified": "2023-04-20T00:43:02.256Z",
+            "headers": [],
+            "params": [],
+            "tests": [
+                {
+                    "type": "res-body",
+                    "custom": "",
+                    "action": "isjson",
+                    "value": ""
+                },
+                {
+                    "type": "res-body",
+                    "custom": "",
+                    "action": "contains",
+                    "value": " \"responseComment\": \"nunc commodo placerat"
+                },
+                {
+                    "type": "res-body",
+                    "custom": "",
+                    "action": "contains",
+                    "value": "\"timePosted\": \"Wed, 25 Jan 2023 17:26:06 GMT\""
+                }
+            ]
+        },
+        {
+            "_id": "9a5a7094-a36a-4536-bfdc-9222d540ed14",
+            "colId": "8b35dde7-c134-4f5e-b263-4a12e42dffb7",
+            "containerId": "",
+            "name": "post listing",
+            "url": "localhost:8001/s/listings",
+            "method": "POST",
+            "sortNum": 10000,
+            "created": "2023-04-18T22:02:35.807Z",
+            "modified": "2023-04-20T00:48:33.547Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"title\": \"hello\",\n  \"description\": \"desc\",\n  \"quantity\": \"33\",\n  \"price\": \"44\",\n  \"sellerId\": \"4\",\n  \"productId\": \"11\"\n}",
+                "form": []
+            },
+            "tests": [
+                {
+                    "type": "res-body",
+                    "custom": "",
+                    "action": "equal",
+                    "value": "Success"
+                }
+            ]
+        },
+        {
+            "_id": "141be78c-ff7f-48a3-b655-da72652d3be0",
+            "colId": "8b35dde7-c134-4f5e-b263-4a12e42dffb7",
+            "containerId": "",
+            "name": "get seller review responses none",
+            "url": "localhost:8001/sellerreviews/5/responses",
+            "method": "GET",
+            "sortNum": 10000,
+            "created": "2023-04-19T21:40:30.190Z",
+            "modified": "2023-04-20T00:44:17.720Z",
+            "headers": [],
+            "params": [],
+            "tests": [
+                {
+                    "type": "res-body",
+                    "custom": "",
+                    "action": "isjson",
+                    "value": ""
+                },
+                {
+                    "type": "res-body",
+                    "custom": "",
+                    "action": "equal",
+                    "value": "[]"
+                }
+            ]
+        },
+        {
+            "_id": "4880978f-c95e-4389-bb6c-ca5175dc64a3",
+            "colId": "8b35dde7-c134-4f5e-b263-4a12e42dffb7",
+            "containerId": "",
+            "name": "get seller review responses nonexistant review",
+            "url": "localhost:8001/sellerreviews/1001/responses",
+            "method": "GET",
+            "sortNum": 10000,
+            "created": "2023-04-19T21:41:10.344Z",
+            "modified": "2023-04-20T00:44:33.499Z",
+            "headers": [],
+            "params": [],
+            "tests": [
+                {
+                    "type": "res-body",
+                    "custom": "",
+                    "action": "isjson",
+                    "value": ""
+                },
+                {
+                    "type": "res-body",
+                    "custom": "",
+                    "action": "equal",
+                    "value": "[]"
+                }
+            ]
+        },
+        {
+            "_id": "2d85d173-c0ba-4dec-82bf-396c288b36b9",
+            "colId": "8b35dde7-c134-4f5e-b263-4a12e42dffb7",
+            "containerId": "",
+            "name": "get sellers",
+            "url": "localhost:8001/sellers",
+            "method": "GET",
+            "sortNum": 10000,
+            "created": "2023-04-19T22:05:28.594Z",
+            "modified": "2023-04-20T00:48:06.564Z",
+            "headers": [],
+            "params": [],
+            "tests": [
+                {
+                    "type": "res-body",
+                    "custom": "",
+                    "action": "isjson",
+                    "value": ""
+                },
+                {
+                    "type": "res-body",
+                    "custom": "",
+                    "action": "contains",
+                    "value": " \"label\": 1,"
+                },
+                {
+                    "type": "res-body",
+                    "custom": "",
+                    "action": "contains",
+                    "value": " \"value\": 1"
+                },
+                {
+                    "type": "res-body",
+                    "custom": "",
+                    "action": "contains",
+                    "value": " \"label\": 100,"
+                },
+                {
+                    "type": "res-body",
+                    "custom": "",
+                    "action": "contains",
+                    "value": " \"value\": 100"
+                }
+            ]
+        },
+        {
+            "_id": "442280d9-9df0-4475-ba71-a471d4667087",
+            "colId": "8b35dde7-c134-4f5e-b263-4a12e42dffb7",
+            "containerId": "",
+            "name": "get products",
+            "url": "localhost:8001/products",
+            "method": "GET",
+            "sortNum": 10000,
+            "created": "2023-04-19T22:05:49.029Z",
+            "modified": "2023-04-20T00:46:31.208Z",
+            "headers": [],
+            "params": [],
+            "tests": [
+                {
+                    "type": "res-body",
+                    "custom": "",
+                    "action": "isjson",
+                    "value": ""
+                },
+                {
+                    "type": "res-body",
+                    "custom": "",
+                    "action": "contains",
+                    "value": "\"label\": \"Batman: The Animated Series Funko Pops\","
+                },
+                {
+                    "type": "res-body",
+                    "custom": "",
+                    "action": "contains",
+                    "value": "\"value\": 1"
+                },
+                {
+                    "type": "res-body",
+                    "custom": "",
+                    "action": "contains",
+                    "value": "\"label\": \"1999 Pokemon Base Set Charizard Holo card\","
+                },
+                {
+                    "type": "res-body",
+                    "custom": "",
+                    "action": "contains",
+                    "value": "\"value\": 2"
+                },
+                {
+                    "type": "res-body",
+                    "custom": "",
+                    "action": "contains",
+                    "value": " \"label\": \"1993 Jurassic Park Dino Damage Tyrannosaurus Rex action figure\","
+                },
+                {
+                    "type": "res-body",
+                    "custom": "",
+                    "action": "contains",
+                    "value": " \"value\": 38"
+                },
+                {
+                    "type": "res-body",
+                    "custom": "",
+                    "action": "contains",
+                    "value": "\"label\": \"1960s Lost in Space robot toy by Remco\","
+                },
+                {
+                    "type": "res-body",
+                    "custom": "",
+                    "action": "contains",
+                    "value": " \"value\": 100"
+                }
+            ]
+        },
+        {
+            "_id": "4929d7fa-7ec4-466f-baba-6432d3fd6c92",
+            "colId": "8b35dde7-c134-4f5e-b263-4a12e42dffb7",
+            "containerId": "",
+            "name": "post listing error",
+            "url": "localhost:8001/s/listings",
+            "method": "POST",
+            "sortNum": 15000,
+            "created": "2023-04-19T21:43:53.517Z",
+            "modified": "2023-04-20T00:48:45.924Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"title\": \"hello\",\n  \"description\": \"desc\",\n  \"quantity\": \"error\",\n  \"price\": \"44\",\n  \"sellerId\": \"4\",\n  \"productId\": \"11\"\n}",
+                "form": []
+            },
+            "tests": [
+                {
+                    "type": "res-code",
+                    "custom": "",
+                    "action": "equal",
+                    "value": "500"
+                }
+            ]
+        },
+        {
+            "_id": "734696cb-b2af-443e-aca3-2bea5585c050",
+            "colId": "8b35dde7-c134-4f5e-b263-4a12e42dffb7",
+            "containerId": "",
+            "name": "put listing",
+            "url": "localhost:8001/s/listings/398",
+            "method": "PUT",
+            "sortNum": 20000,
+            "created": "2023-04-18T22:45:39.010Z",
+            "modified": "2023-04-20T00:48:59.632Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"newTitle\": \"changed\",\n  \"newDescription\": \"different\",\n  \"newQuantity\": \"11\",\n  \"newPrice\": \"22\"\n}",
+                "form": []
+            },
+            "tests": [
+                {
+                    "type": "res-body",
+                    "custom": "",
+                    "action": "equal",
+                    "value": "Success"
+                }
+            ]
+        },
+        {
+            "_id": "77511636-70f2-46a1-9b19-a51923a243d7",
+            "colId": "8b35dde7-c134-4f5e-b263-4a12e42dffb7",
+            "containerId": "",
+            "name": "put listing error",
+            "url": "localhost:8001/s/listings/398",
+            "method": "PUT",
+            "sortNum": 25000,
+            "created": "2023-04-19T21:45:42.479Z",
+            "modified": "2023-04-20T00:49:10.952Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"title\": \"changed\",\n  \"description\": \"different\",\n  \"quantity\": \"11\",\n  \"price\": \"error\"\n}",
+                "form": []
+            },
+            "tests": [
+                {
+                    "type": "res-code",
+                    "custom": "",
+                    "action": "equal",
+                    "value": "500"
+                }
+            ]
+        },
+        {
+            "_id": "2a13abb4-e576-4d64-8167-17a8166ca287",
+            "colId": "8b35dde7-c134-4f5e-b263-4a12e42dffb7",
+            "containerId": "",
+            "name": "delete listing",
+            "url": "localhost:8001/s/listings/401",
+            "method": "DELETE",
+            "sortNum": 30000,
+            "created": "2023-04-18T22:50:01.078Z",
+            "modified": "2023-04-20T00:49:48.318Z",
+            "headers": [],
+            "params": [],
+            "tests": [
+                {
+                    "type": "res-body",
+                    "custom": "",
+                    "action": "equal",
+                    "value": "Success"
+                }
+            ]
+        },
+        {
+            "_id": "90cb478b-315b-4717-9a46-325ac21a6bf8",
+            "colId": "8b35dde7-c134-4f5e-b263-4a12e42dffb7",
+            "containerId": "",
+            "name": "delete nonexistant listing",
+            "url": "localhost:8001/s/listings/9000",
+            "method": "DELETE",
+            "sortNum": 35000,
+            "created": "2023-04-19T19:19:17.636Z",
+            "modified": "2023-04-20T00:51:05.049Z",
+            "headers": [],
+            "params": [],
+            "tests": [
+                {
+                    "type": "res-body",
+                    "custom": "",
+                    "action": "equal",
+                    "value": "Success"
+                }
+            ]
+        },
+        {
+            "_id": "190720b5-020b-489a-bc57-c2902597d08a",
+            "colId": "8b35dde7-c134-4f5e-b263-4a12e42dffb7",
+            "containerId": "",
+            "name": "post listing review response",
+            "url": "localhost:8001/s/reviews/12",
+            "method": "POST",
+            "sortNum": 40000,
+            "created": "2023-04-18T23:04:24.445Z",
+            "modified": "2023-04-20T00:51:21.472Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"responseComment\": \"you're lying\"\n}",
+                "form": []
+            },
+            "tests": [
+                {
+                    "type": "res-body",
+                    "custom": "",
+                    "action": "equal",
+                    "value": "Success"
+                }
+            ]
+        },
+        {
+            "_id": "07b9f93c-541e-42e2-8f2f-0f81ef0d231d",
+            "colId": "8b35dde7-c134-4f5e-b263-4a12e42dffb7",
+            "containerId": "",
+            "name": "post listing review response nonexistant review",
+            "url": "localhost:8001/s/reviews/100001",
+            "method": "POST",
+            "sortNum": 45000,
+            "created": "2023-04-19T21:52:52.210Z",
+            "modified": "2023-04-20T00:51:32.202Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"responseComment\": \"you're lying\"\n}",
+                "form": []
+            },
+            "tests": [
+                {
+                    "type": "res-code",
+                    "custom": "",
+                    "action": "equal",
+                    "value": "500"
+                }
+            ]
+        },
+        {
+            "_id": "a8fa6dd3-6f1c-40b4-93a5-c88554d4ccbc",
+            "colId": "8b35dde7-c134-4f5e-b263-4a12e42dffb7",
+            "containerId": "",
+            "name": "post seller review response",
+            "url": "localhost:8001/s/sellerreviews/19",
+            "method": "POST",
+            "sortNum": 46250,
+            "created": "2023-04-19T21:53:54.235Z",
+            "modified": "2023-04-19T22:13:54.611Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"responseComment\": \"i'm glad you were satisfied\"\n}",
+                "form": []
+            },
+            "tests": [
+                {
+                    "type": "res-body",
+                    "custom": "",
+                    "action": "equal",
+                    "value": "Success"
+                }
+            ]
+        },
+        {
+            "_id": "c892aa7a-580d-4c4c-8cdb-a72b353f1df7",
+            "colId": "8b35dde7-c134-4f5e-b263-4a12e42dffb7",
+            "containerId": "",
+            "name": "post seller review response nonexistant seller",
+            "url": "localhost:8001/s/sellerreviews/100001",
+            "method": "POST",
+            "sortNum": 47500,
+            "created": "2023-04-19T21:53:57.463Z",
+            "modified": "2023-04-19T22:13:36.971Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"responseComment\": \"so true\"\n}",
+                "form": []
+            },
+            "tests": [
+                {
+                    "type": "res-code",
+                    "custom": "",
+                    "action": "equal",
+                    "value": "500"
+                }
+            ]
+        },
+        {
+            "_id": "7b2a8686-ab27-4c7d-aaf3-45b0f69d795f",
+            "colId": "8b35dde7-c134-4f5e-b263-4a12e42dffb7",
+            "containerId": "",
+            "name": "get seller orders",
+            "url": "localhost:8001/s/3/orders",
+            "method": "GET",
+            "sortNum": 48750,
+            "created": "2023-04-19T21:57:34.650Z",
+            "modified": "2023-04-20T00:53:19.716Z",
+            "headers": [],
+            "params": [],
+            "tests": [
+                {
+                    "type": "res-body",
+                    "custom": "",
+                    "action": "isjson",
+                    "value": ""
+                },
+                {
+                    "type": "res-body",
+                    "custom": "",
+                    "action": "contains",
+                    "value": " \"amountPaid\": \"5456.26\","
+                },
+                {
+                    "type": "res-body",
+                    "custom": "",
+                    "action": "contains",
+                    "value": " \"authenticatorId\": 5,"
+                },
+                {
+                    "type": "res-body",
+                    "custom": "",
+                    "action": "contains",
+                    "value": " \"buyerId\": 93,"
+                },
+                {
+                    "type": "res-body",
+                    "custom": "",
+                    "action": "contains",
+                    "value": " \"completed\": 0,"
+                },
+                {
+                    "type": "res-body",
+                    "custom": "",
+                    "action": "contains",
+                    "value": " \"dateShipped\": \"Tue, 06 Dec 2022 00:00:00 GMT\","
+                },
+                {
+                    "type": "res-body",
+                    "custom": "",
+                    "action": "contains",
+                    "value": " \"isAuthenticated\": 1,"
+                },
+                {
+                    "type": "res-body",
+                    "custom": "",
+                    "action": "contains",
+                    "value": " \"listingId\": 396,"
+                },
+                {
+                    "type": "res-body",
+                    "custom": "",
+                    "action": "contains",
+                    "value": " \"orderId\": 109"
+                },
+                {
+                    "type": "res-body",
+                    "custom": "",
+                    "action": "contains",
+                    "value": " \"quantity\": 4,"
+                },
+                {
+                    "type": "res-body",
+                    "custom": "",
+                    "action": "contains",
+                    "value": " \"sellerId\": 3,"
+                },
+                {
+                    "type": "res-body",
+                    "custom": "",
+                    "action": "contains",
+                    "value": " \"title\": \"lacus at turpis\""
+                },
+                {
+                    "type": "res-body",
+                    "custom": "",
+                    "action": "contains",
+                    "value": " \"orderId\": 195,"
+                }
+            ]
+        },
+        {
+            "_id": "1bfba1d3-27ce-47a1-a8bb-0ab60706356e",
+            "colId": "8b35dde7-c134-4f5e-b263-4a12e42dffb7",
+            "containerId": "",
+            "name": "get authenticator orders",
+            "url": "localhost:8001/a/4/orders",
+            "method": "GET",
+            "sortNum": 49375,
+            "created": "2023-04-20T00:15:09.217Z",
+            "modified": "2023-04-20T00:56:12.172Z",
+            "headers": [],
+            "params": [],
+            "tests": [
+                {
+                    "type": "res-body",
+                    "custom": "",
+                    "action": "isjson",
+                    "value": ""
+                },
+                {
+                    "type": "res-body",
+                    "custom": "",
+                    "action": "contains",
+                    "value": " \"amountPaid\": \"5404.91\","
+                },
+                {
+                    "type": "res-body",
+                    "custom": "",
+                    "action": "contains",
+                    "value": " \"authenticatorId\": 4,"
+                },
+                {
+                    "type": "res-body",
+                    "custom": "",
+                    "action": "contains",
+                    "value": " \"buyerId\": 24,"
+                },
+                {
+                    "type": "res-body",
+                    "custom": "",
+                    "action": "contains",
+                    "value": " \"completed\": 0,"
+                },
+                {
+                    "type": "res-body",
+                    "custom": "",
+                    "action": "contains",
+                    "value": " \"dateShipped\": \"Tue, 07 Feb 2023 00:00:00 GMT\","
+                },
+                {
+                    "type": "res-body",
+                    "custom": "",
+                    "action": "contains",
+                    "value": " \"isAuthenticated\": 1,"
+                },
+                {
+                    "type": "res-body",
+                    "custom": "",
+                    "action": "contains",
+                    "value": " \"listingId\": 335,"
+                },
+                {
+                    "type": "res-body",
+                    "custom": "",
+                    "action": "contains",
+                    "value": " \"orderId\": 16,"
+                },
+                {
+                    "type": "res-body",
+                    "custom": "",
+                    "action": "contains",
+                    "value": " \"quantity\": 9,"
+                },
+                {
+                    "type": "res-body",
+                    "custom": "",
+                    "action": "contains",
+                    "value": " \"sellerId\": 28,"
+                },
+                {
+                    "type": "res-body",
+                    "custom": "",
+                    "action": "contains",
+                    "value": " \"title\": \"dapibus nulla suscipit ligula\""
+                },
+                {
+                    "type": "res-body",
+                    "custom": "",
+                    "action": "contains",
+                    "value": " \"orderId\": 44,"
+                },
+                {
+                    "type": "res-body",
+                    "custom": "",
+                    "action": "contains",
+                    "value": " \"orderId\": 60,"
+                },
+                {
+                    "type": "res-body",
+                    "custom": "",
+                    "action": "contains",
+                    "value": " \"orderId\": 78,"
+                },
+                {
+                    "type": "res-body",
+                    "custom": "",
+                    "action": "contains",
+                    "value": " \"orderId\": 96,"
+                },
+                {
+                    "type": "res-body",
+                    "custom": "",
+                    "action": "contains",
+                    "value": " \"orderId\": 105,"
+                },
+                {
+                    "type": "res-body",
+                    "custom": "",
+                    "action": "contains",
+                    "value": " \"orderId\": 183,"
+                },
+                {
+                    "type": "res-body",
+                    "custom": "",
+                    "action": "contains",
+                    "value": " \"orderId\": 196,"
+                }
+            ]
+        },
+        {
+            "_id": "b18a8045-5802-40ef-90e0-f51546717f24",
+            "colId": "8b35dde7-c134-4f5e-b263-4a12e42dffb7",
+            "containerId": "",
+            "name": "get authenticator single order details",
+            "url": "localhost:8001/a/order/3/details",
+            "method": "GET",
+            "sortNum": 49687.5,
+            "created": "2023-04-20T00:16:09.536Z",
+            "modified": "2023-04-20T00:58:08.956Z",
+            "headers": [],
+            "params": [],
+            "tests": [
+                {
+                    "type": "res-body",
+                    "custom": "",
+                    "action": "isjson",
+                    "value": ""
+                },
+                {
+                    "type": "res-body",
+                    "custom": "",
+                    "action": "contains",
+                    "value": " \"amountPaid\": \"9738.92\","
+                },
+                {
+                    "type": "res-body",
+                    "custom": "",
+                    "action": "contains",
+                    "value": " \"buyeremail\": \"jheinsh8@scribd.com\","
+                },
+                {
+                    "type": "res-body",
+                    "custom": "",
+                    "action": "contains",
+                    "value": " \"completed\": 0,"
+                },
+                {
+                    "type": "res-body",
+                    "custom": "",
+                    "action": "contains",
+                    "value": " \"isAuthenticated\": 1,"
+                },
+                {
+                    "type": "res-body",
+                    "custom": "",
+                    "action": "contains",
+                    "value": " \"listingID\": 224,"
+                },
+                {
+                    "type": "res-body",
+                    "custom": "",
+                    "action": "contains",
+                    "value": " \"name\": \"1980s Macintosh 128K computer\","
+                },
+                {
+                    "type": "res-body",
+                    "custom": "",
+                    "action": "contains",
+                    "value": " \"selleremail\": \"msarfati2g@infoseek.co.jp\","
+                },
+                {
+                    "type": "res-body",
+                    "custom": "",
+                    "action": "contains",
+                    "value": " \"title\": \"dictumst etiam faucibus cursus urna ut tellus\""
+                }
+            ]
+        },
+        {
+            "_id": "22631b9a-a6f8-4cb1-8389-95971e2abf2b",
+            "colId": "8b35dde7-c134-4f5e-b263-4a12e42dffb7",
+            "containerId": "",
+            "name": "put authenticate",
+            "url": "localhost:8001/a/order/13",
+            "method": "PUT",
+            "sortNum": 50000,
+            "created": "2023-04-19T00:35:07.987Z",
+            "modified": "2023-04-20T00:58:23.504Z",
+            "headers": [],
+            "params": [],
+            "tests": [
+                {
+                    "type": "res-body",
+                    "custom": "",
+                    "action": "equal",
+                    "value": "Success"
+                }
+            ]
+        },
+        {
+            "_id": "73a788ac-2cef-4b76-8124-6c47e05c5526",
+            "colId": "8b35dde7-c134-4f5e-b263-4a12e42dffb7",
+            "containerId": "",
+            "name": "post note",
+            "url": "localhost:8001/a/listings/1/1",
+            "method": "POST",
+            "sortNum": 70000,
+            "created": "2023-04-19T00:45:10.790Z",
+            "modified": "2023-04-20T00:58:37.273Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"noteComment\": \"this one seems legit\"\n}",
+                "form": []
+            },
+            "tests": [
+                {
+                    "type": "res-body",
+                    "custom": "",
+                    "action": "equal",
+                    "value": "Success"
+                }
+            ]
+        },
+        {
+            "_id": "df152a64-8204-47ea-939a-8167340a5a47",
+            "colId": "8b35dde7-c134-4f5e-b263-4a12e42dffb7",
+            "containerId": "",
+            "name": "post note error",
+            "url": "localhost:8001/a/listings/3434343/1",
+            "method": "POST",
+            "sortNum": 75000,
+            "created": "2023-04-20T00:17:34.784Z",
+            "modified": "2023-04-20T00:58:51.525Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"noteComment\": \"this one seems legit\"\n}",
+                "form": []
+            },
+            "tests": [
+                {
+                    "type": "res-code",
+                    "custom": "",
+                    "action": "equal",
+                    "value": "500"
+                }
+            ]
+        },
+        {
+            "_id": "b2f38469-0e5c-4b38-9158-ea775a7fd8ac",
+            "colId": "8b35dde7-c134-4f5e-b263-4a12e42dffb7",
+            "containerId": "",
+            "name": "post note error 2",
+            "url": "localhost:8001/a/listings/3/1121212",
+            "method": "POST",
+            "sortNum": 77500,
+            "created": "2023-04-20T00:18:01.246Z",
+            "modified": "2023-04-20T01:02:25.999Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"noteComment\": \"this one seems legit\"\n}",
+                "form": []
+            },
+            "tests": [
+                {
+                    "type": "res-code",
+                    "custom": "",
+                    "action": "equal",
+                    "value": "500"
+                }
+            ]
+        },
+        {
+            "_id": "303e60f8-5159-4cd6-83c6-0c5725fced5f",
+            "colId": "8b35dde7-c134-4f5e-b263-4a12e42dffb7",
+            "containerId": "",
+            "name": "put note",
+            "url": "localhost:8001/a/notes/201",
+            "method": "PUT",
+            "sortNum": 80000,
+            "created": "2023-04-19T00:51:17.239Z",
+            "modified": "2023-04-20T00:59:11.512Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"noteComment\": \"this is changed\"\n}",
+                "form": []
+            },
+            "tests": [
+                {
+                    "type": "res-body",
+                    "custom": "",
+                    "action": "equal",
+                    "value": "Success"
+                }
+            ]
+        },
+        {
+            "_id": "24bfef78-9cd1-4642-8fa5-e8ceb05158ac",
+            "colId": "8b35dde7-c134-4f5e-b263-4a12e42dffb7",
+            "containerId": "",
+            "name": "delete note",
+            "url": "localhost:8001/a/notes/200",
+            "method": "DELETE",
+            "sortNum": 90000,
+            "created": "2023-04-19T00:55:12.385Z",
+            "modified": "2023-04-20T01:00:34.159Z",
+            "headers": [],
+            "params": [],
+            "tests": [
+                {
+                    "type": "res-body",
+                    "custom": "",
+                    "action": "equal",
+                    "value": "Success"
+                }
+            ]
+        },
+        {
+            "_id": "fe9cd77a-06ee-4364-bad4-4bd9cbf9f25a",
+            "colId": "8b35dde7-c134-4f5e-b263-4a12e42dffb7",
+            "containerId": "",
+            "name": "get notes",
+            "url": "localhost:8001/a/notes",
+            "method": "GET",
+            "sortNum": 370000,
+            "created": "2023-04-20T00:19:05.678Z",
+            "modified": "2023-04-20T01:01:59.724Z",
+            "headers": [],
+            "params": [],
+            "tests": [
+                {
+                    "type": "res-body",
+                    "custom": "",
+                    "action": "isjson",
+                    "value": ""
+                },
+                {
+                    "type": "res-body",
+                    "custom": "",
+                    "action": "contains",
+                    "value": "\"noteComment\": \"vivamus vestibulum"
+                },
+                {
+                    "type": "res-body",
+                    "custom": "",
+                    "action": "contains",
+                    "value": " \"noteID\": 1,"
+                },
+                {
+                    "type": "res-body",
+                    "custom": "",
+                    "action": "contains",
+                    "value": " \"timePosted\": \"Mon, 04 Jul 2022 13:35:36 GMT\""
+                },
+                {
+                    "type": "res-body",
+                    "custom": "",
+                    "action": "contains",
+                    "value": " \"authenticatorId\": 18,"
+                },
+                {
+                    "type": "res-body",
+                    "custom": "",
+                    "action": "contains",
+                    "value": " \"authenticatorId\": 16,"
+                },
+                {
+                    "type": "res-body",
+                    "custom": "",
+                    "action": "contains",
+                    "value": " \"listingId\": 224,"
+                },
+                {
+                    "type": "res-body",
+                    "custom": "",
+                    "action": "contains",
+                    "value": " \"noteComment\": \"aliquet maecenas"
+                },
+                {
+                    "type": "res-body",
+                    "custom": "",
+                    "action": "contains",
+                    "value": " \"noteID\": 99,"
+                },
+                {
+                    "type": "res-body",
+                    "custom": "",
+                    "action": "contains",
+                    "value": " \"timePosted\": \"Fri, 17 Feb 2023 01:28:00 GMT\""
+                }
+            ]
+        }
+    ]
+}
